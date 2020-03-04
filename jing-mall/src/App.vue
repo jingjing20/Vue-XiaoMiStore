@@ -1,15 +1,11 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
     <router-view/>
   </div>
 </template>
 
 <script>
-import jsonp from 'jsonp';
+// import jsonp from 'jsonp';
 // import axios from 'axios';
 export default {
   data() {
@@ -18,10 +14,7 @@ export default {
     }
   },
   mounted() {
-    let url = 'https://juejin.im/tealog/v1/list?rdn=0.8983546746534701';
-    jsonp(url,(err,res) => {
-      console.log(res)
-    })
+    
   }
 }
 </script>

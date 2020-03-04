@@ -1,19 +1,14 @@
 <!--  -->
 <template>
   <div>
-    <nav-header></nav-header>
     <router-view />
-    <nav-footer></nav-footer>
+    <h1>this is index page</h1>
   </div>
 </template>
 
 <script>
-import NavHeader from '../components/NavHeader'
-import NavFooter from '../components/NavFooter'
 export default {
   components: {
-    NavHeader,
-    NavFooter
   },
   data () {
     return {
