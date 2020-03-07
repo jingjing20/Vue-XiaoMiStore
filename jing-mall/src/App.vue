@@ -5,16 +5,34 @@
 </template>
 
 <script>
-// import jsonp from 'jsonp';
-// import axios from 'axios';
+import storage from './storage/index';
 export default {
   data() {
     return {
-      jingjing: 'meinv'
+      res: {}
     }
   },
   mounted() {
-    
+    // storage.setItem("hao",520,"user01")
+    // storage.clear("hao","user01")
+    // storage.clear("hao")
+    // storage.setItem("username","haohao","user01")
+
+    // 1、本地加载请求静态json文件
+    // this.axios.get('/mock/user/login.json').then((res) => {
+    //   this.res = res
+    // })
+    // 2、通过easy-mock平台实现数据mock
+    // this.axios.get('/user/login').then((res) => {
+    //   this.res = res
+    // })
+    // 3、本地集成mockjs
+    this.axios.get('/user/login').then((res) => {
+      this.res = res
+    })
+  },
+  created() {
+
   }
 }
 </script>

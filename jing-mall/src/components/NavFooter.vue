@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div>
-    <h2>this is footer</h2>
+    <h1>this is footer</h1>
   </div>
 </template>
 
