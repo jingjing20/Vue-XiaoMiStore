@@ -2,7 +2,7 @@
 <template>
   <div>
     <router-view />
-    <h1>this is index page</h1>
+    <!-- <h1>this is index page</h1> -->
   </div>
 </template>
 

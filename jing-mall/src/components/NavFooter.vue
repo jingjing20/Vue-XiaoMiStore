@@ -1,7 +1,7 @@
 <!--  -->
 <template>
   <div>
-    <h1>this is footer</h1>
+    
   </div>
 </template>
 
@@ -15,6 +15,6 @@ export default {
 }
 </script>
 
-<style lang='stylus' scoped>
+<style lang='scss' scoped>
 
 </style>
