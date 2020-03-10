@@ -161,10 +161,71 @@
               </ul>
             </div>
           </div>
+          <div class="item-menu">
+            <span>笔记本</span>
+            <div class="children">
+              <ul>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src='//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/d712f71b3c4a3b562601c2b956a660ad.png?thumb=1&w=200&h=138' alt="">
+                    </div>
+                    <div class="pro-name">小米笔记本Pro 15</div>
+                    <div class="pro-price">5499元起</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src='//cdn.cnbj1.fds.api.mi-img.com/mi-mall/6abc701fb3cf48f2c7a3fd5ef053529a.jpg?thumb=1&w=200&h=138&f=webp&q=90' alt="">
+                    </div>
+                    <div class="pro-name">RedmiBook 13</div>
+                    <div class="pro-price">4199元起</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src='//cdn.cnbj1.fds.api.mi-img.com/mi-mall/6a25f895ad6019c3fae32fd1f48a2c7c.png?thumb=1&w=200&h=138&f=webp&q=90' alt="">
+                    </div>
+                    <div class="pro-name">RedmiBook 14</div>
+                    <div class="pro-price">3999元起</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src='//cdn.cnbj1.fds.api.mi-img.com/mi-mall/33c6a31aaee90164ce963801bec48e64.png?thumb=1&w=200&h=138&f=webp&q=90' alt="">
+                    </div>
+                    <div class="pro-name">游戏本2019款</div>
+                    <div class="pro-price">6999元起</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src='//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/bb159dbe860ee434b52d8eed9e9fd424.png?thumb=1&w=200&h=138' alt="">
+                    </div>
+                    <div class="pro-name">小米笔记本 15.6"</div>
+                    <div class="pro-price">3799元起</div>
+                  </a>
+                </li>
+                <li class="product">
+                  <a href="" target="_blank">
+                    <div class="pro-img">
+                      <img src='//cdn.cnbj0.fds.api.mi-img.com/b2c-mimall-media/95c4329ce2c454e2a5fa1e0931528a46.png?thumb=1&w=200&h=138' alt="">
+                    </div>
+                    <div class="pro-name">小米笔记本Air 12.5"</div>
+                    <div class="pro-price">3299元起</div>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div class="header-search">
           <div class="wrapper">
-            <input type="text" name="keyname">
+            <input type="text" name="keyname" placeholder="婧宝贝哦">
             <a href="javascript:;"></a>
           </div>
         </div>
@@ -277,7 +338,7 @@ export default {
         .header-menu{
           display: inline-block;
           width: 643px;
-          padding-left: 209px;
+          padding-left: 150px;
           .item-menu{
             display: inline-block;
             color: #333333;
@@ -307,6 +368,7 @@ export default {
               box-shadow:0px 7px 6px 0px rgba(0, 0, 0, 0.11);
               z-index: 10;
               transition:all .5s;
+              background-color: #ffffff;
               .product{
                 position:relative;
                 float:left;
