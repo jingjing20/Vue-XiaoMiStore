@@ -52,12 +52,12 @@
       </div>
       <div class="ads-box">
         <a :href="'/#/product/'+item.id" v-for="(item,index) in adsList" v-bind:key="index">
-          <img :src="item.img" alt="">
+          <img v-lazy="item.img" alt="">
         </a>
       </div>
       <div class="banner">
         <a href="/#/product/30">
-          <img src="//cdn.cnbj1.fds.api.mi-img.com/mi-mall/406c0feca62732acbb2893344486895d.jpg?thumb=1&w=1533&h=150&f=webp&q=90" alt="">
+          <img v-lazy="'//cdn.cnbj1.fds.api.mi-img.com/mi-mall/406c0feca62732acbb2893344486895d.jpg?thumb=1&w=1533&h=150&f=webp&q=90'" alt="">
         </a>
       </div>
     </div>
@@ -66,7 +66,7 @@
           <h2>手机</h2>
           <div class="wrapper">
             <div class="banner-left">
-              <a href="/#/product/35"><img src="/imgs/mix-alpha.jpg" alt=""></a>
+              <a href="/#/product/35"><img v-lazy="'/imgs/mix-alpha.jpg'" alt=""></a>
             </div>
             <div class="list-box">
               <div class="list" v-for="(arr,i) in phoneList" v-bind:key="i">
@@ -305,6 +305,9 @@ export default {
         padding: 10px,10px;
       }
       .swiper-button-prev:hover{
+        background-color:#55585a6e;
+      }
+      .swiper-button-next:hover{
         background-color:#55585a6e;
       }
       img{
