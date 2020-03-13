@@ -87,10 +87,10 @@
         </div>
       </div>
     <search-bar />
-    <!-- <modal 
+    <modal 
       title="提示" 
       sureText="查看购物车" 
-      btnType="1" 
+      btnType="3" 
       modalType="middle" 
       v-bind:showModal="showModal"
       v-on:submit="goToCart"
@@ -99,13 +99,13 @@
       <template v-slot:body>
         <p>商品添加成功！</p>
       </template>
-    </modal> -->
+    </modal>
   </div>
 </template>
 
 <script>
 import SearchBar from '../components/ServiceBar';
-// import Modal from './../components/Modal'
+import Modal from './../components/Modal'
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
 export default {
@@ -113,7 +113,7 @@ export default {
     swiper,
     swiperSlide,
     SearchBar,
-    // Modal
+    Modal
   },
   data () {
     return {
@@ -212,14 +212,15 @@ export default {
         this.phoneList = [res.list.slice(0,4),res.list.slice(4,8)];
       })
     },
-    addCart(id){
-      this.axios.post('/carts',{
-        productId:id,
-        selected: true
-      }).then((res)=>{
-        this.showModal = true;
-        this.$store.dispatch('saveCartCount',res.cartTotalQuantity);
-      });
+    addCart(){
+      this.showModal = true
+      // this.axios.post('/carts',{
+      //   productId:id,
+      //   selected: true
+      // }).then((res)=>{
+      //   this.showModal = true;
+      //   this.$store.dispatch('saveCartCount',res.cartTotalQuantity);
+      // });
     },
     goToCart(){
       this.$router.push('/cart');
