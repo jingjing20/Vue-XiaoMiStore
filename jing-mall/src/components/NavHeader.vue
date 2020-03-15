@@ -240,7 +240,7 @@ export default {
   data() {
     return {
       phoneList: [],
-      username: 'jingjing'
+      username: ''
     }
   },
   filters: {
