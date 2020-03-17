@@ -1,19 +1,25 @@
-<!--  -->
 <template>
   <div>
-    <h1>this is products page</h1>
+    <product-param>
+      <template v-slot:jing>
+        <button class="btn">立即购买</button>
+      </template>
+    </product-param>
   </div>
 </template>
 
 <script>
+import ProductParam from './../components/ProductParam';
 export default {
-  data () {
-    return {
-    }
+  name: 'product',
+  components:{
+    ProductParam
   }
 }
 </script>
 
-<style lang='stylus' scoped>
-
+<style lang='scss' scoped>
+.btn{
+  margin-left: 10px;
+}
 </style>
