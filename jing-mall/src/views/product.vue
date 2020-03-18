@@ -1,10 +1,20 @@
 <template>
-  <div>
+  <div class="product">
     <product-param>
       <template v-slot:jing>
         <button class="btn">立即购买</button>
       </template>
     </product-param>
+    <div class="jing">jingjing</div>
+    <div class="jing">jingjing</div>
+    <div class="jing">jingjing</div>
+    <div class="jing">jingjing</div>
+    <div class="jing">jingjing</div>
+    <div class="jing">jingjing</div>
+    <div class="jing">jingjing</div>
+    <div class="jing">jingjing</div>
+    <div class="jing">jingjing</div>
+    <div class="jing">jingjing</div>
   </div>
 </template>
 
@@ -19,7 +29,14 @@ export default {
 </script>
 
 <style lang='scss' scoped>
-.btn{
-  margin-left: 10px;
+.product{
+  .btn{
+    margin-left: 10px;
+  }
+  .jing{
+    height: 80px;
+    background-color: chocolate;
+  }
 }
+
 </style>

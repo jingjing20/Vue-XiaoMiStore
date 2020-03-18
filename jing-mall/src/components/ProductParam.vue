@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-bar">
+  <div class="nav-bar" :class="{'is_fixed':isFixed}">
     <div class="container">
       <div class="pro-title">
         小米8
@@ -9,14 +9,31 @@
         <a href="javascript:;">参数</a><span>|</span>
         <a href="javascript:;">用户评价</a>
         <slot name="jing"></slot>
-      </div>
+      </div>  
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'nav-bar'
+  name: 'nav-bar',
+  data () {
+    return {
+      isFixed: false
+    }
+  },
+  mounted() {
+    window.addEventListener('scroll',this.initHeight)
+  },
+  methods: {
+    initHeight() {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop
+      this.isFixed = scrollTop > 152? true : false
+    }
+  },
+  destroyed() {
+    window.removeEventListener('scroll',this.initHeight,false)  //默认true捕获机制 false为冒泡机制
+  }
 }
 </script>
 
@@ -26,7 +43,14 @@ export default {
 .nav-bar{
   height: 70px;
   line-height: 70px;
-  border: 1px solid $colorH;
+  border-top: 1px solid $colorH;
+  background-color: $colorG;
+  &.is_fixed{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 5px 5px $colorE;
+  }
   .container{
     @include flex();
   }
