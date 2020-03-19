@@ -148,11 +148,11 @@ export default {
           img:'/imgs/slider/slide-3.jpg'
         },
         {
-          id:'',
+          id:'47',
           img:'/imgs/slider/slide-4.jpg'
         },
         {
-          id:'',
+          id:'48',
           img:'https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e909ef0e50960f61a730380013bc960a.jpg?thumb=1&w=1533&h=575&f=webp&q=90'
         }
       ],
