@@ -1,28 +1,24 @@
-<!--  -->
 <template>
   <div>
-    <nav-header></nav-header>
-    <router-view />
-    <order-footer></order-footer>
+    <router-view></router-view>
+    <service-bar></service-bar>
+    <nav-footer></nav-footer>
   </div>
 </template>
-
 <script>
-import NavHeader from '../components/NavHeader'
-import OrderFooter from '../components/OrderFooter'
-export default {
-  // name: "order",
-  components: {
-    NavHeader,
-    OrderFooter
-  },
-  data () {
-    return {
+  import ServiceBar from './../components/ServiceBar'
+  import NavFooter from './../components/NavFooter'
+  export default{
+    name:'order',
+    data(){
+      return {
+        title:'',
+        tip:''
+      }
+    },
+    components:{
+      ServiceBar,
+      NavFooter
     }
   }
-}
 </script>
-
-<style lang='stylus' scoped>
-
-</style>
