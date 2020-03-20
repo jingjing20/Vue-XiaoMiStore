@@ -57,6 +57,9 @@ export default {
         this.$cookie.set('userId',res.id,{expires:'Session'});
         // this.$store.dispatch('saveUserName',res.username);
         this.saveUserName(res.username)
+        this.axios.get('/carts/products/sum').then((res=0)=>{
+          this.$store.dispatch('saveCartCount',res);
+        })
         this.$router.push({
           name:'index',
           params:{
