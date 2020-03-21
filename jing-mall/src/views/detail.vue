@@ -102,7 +102,7 @@ export default{
         selected: true
       }).then((res={cartProductVoList:0})=>{
         this.$store.dispatch('saveCartCount',res.cartTotalQuantity);
-        // this.$router.push('/cart');
+        this.$router.push('/cart');
       });
     }
   }

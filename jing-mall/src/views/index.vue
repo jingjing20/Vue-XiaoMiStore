@@ -72,7 +72,7 @@
               <div class="list" v-for="(arr,i) in phoneList" v-bind:key="i">
                 <div class="item" v-for="(item,j) in arr" v-bind:key="j">
                   <span v-bind:class="{'new-pro':j%2==0}">新品</span>
-                  <div class="item-img">
+                  <div class="item-img" @click="showdetail(item.id)">
                     <img :src="item.mainImage" alt="">
                   </div>
                   <div class="item-info">
@@ -211,6 +211,9 @@ export default {
         res.list = res.list.slice(6,14);
         this.phoneList = [res.list.slice(0,4),res.list.slice(4,8)];
       })
+    },
+    showdetail(id){
+      this.$router.push(`/product/${id}`)
     },
     addCart(id){
       this.showModal = true
