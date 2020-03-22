@@ -1,65 +1,75 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/home'
-import Index from '../views/index'
+
+//引入文件优化
+const path = require('path')
+const files = require.context('@/views', false, /\.vue$/)
+console.log(files)
+const modules = {}
+files.keys().forEach(key => {
+  const name = path.basename(key, '.vue')
+  modules[name] = files(key).default || files(key)
+  console.log(name)
+})
+console.log(modules)
 
 Vue.use(VueRouter)
 
 const routes = [{
         path: '/',
         name: 'Home',
-        component: Home,
+        component: modules.home,
         redirect: '/index',
         children: [{
                 path: '/index',
                 name: 'index',
-                component: Index
+                component: modules.index
             },
             {
                 path: '/product/:id',
                 name: 'product',
-                component: () => import ('../views/product.vue')
+                component: modules.product
             },
             {
                 path: '/detail/:id',
                 name: 'detail',
-                component: () => import ('../views/detail.vue')
+                component: modules.detail
             },
         ]
     },
     {
         path: '/login',
         name: 'login',
-        component: () => import ('../views/login.vue')
+        component: modules.login
     },
     {
         path: '/cart',
         name: 'cart',
-        component: () => import ('../views/cart.vue')
+        component: modules.cart
     },
     {
         path: '/order',
         name: 'order',
-        component: () => import ('../views/order.vue'),
+        component: modules.order,
         children: [{
                 path: 'list',
                 name: 'order-list',
-                component: () => import ('../views/orderList.vue')
+                component: modules.orderList
             },
             {
                 path: 'confirm',
                 name: 'order-confirm',
-                component: () => import ('../views/orderConfirm.vue')
+                component: modules.orderConfirm
             },
             {
                 path: 'pay',
                 name: 'order-pay',
-                component: () => import ('../views/orderPay.vue')
+                component: modules.orderPay
             },
             {
                 path: 'alipay',
                 name: 'alipay',
-                component: () => import ('../views/aliPay.vue')
+                component: modules.aliPay
             }
         ]
     }
