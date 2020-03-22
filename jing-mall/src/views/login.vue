@@ -84,14 +84,14 @@ export default {
 <style lang="scss">
 .login{
   &>.container{
-    height:113px;
+    height:98px;
     img{
       width:auto;
       height:100%;
     }
   }
   .wrapper{
-    background:url('/imgs/login-bg.jpg') no-repeat center;
+    background:url('/imgs/login-bgimg.jpg') no-repeat center;
     .container{
       height:576px;
       .login-form{
