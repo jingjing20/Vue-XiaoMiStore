@@ -1,4 +1,3 @@
-<!--  -->
 <template>
   <div class="register">
     <div class="wrapper">
@@ -11,13 +10,13 @@
         </div>
         <div class="regbox">
           <div class="input">
-            <input type="text" v-model="username" placeholder="用户名">
+            <el-input type="text" v-model="username" placeholder="用户名"></el-input>
           </div>
           <div class="input">
-            <input type="password" v-model="password" placeholder="密码">
+            <el-input type="password" v-model="password" show-password placeholder="密码"></el-input>
           </div>
           <div class="input">
-            <input type="email" v-model="email" placeholder="邮箱">
+            <el-input type="email" v-model="email" placeholder="邮箱"></el-input>
           </div>
           <div class="btn-box">
             <a href="javascript:;" class="btn" @click="register">立即注册</a>
@@ -54,7 +53,7 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       username:'',
       password:'',
@@ -121,13 +120,11 @@ export default {
           display:inline-block;
           width:100%;
           height:40px;
-          border:1px solid #E5E5E5;
           margin-bottom:20px;
           input{
             width: 100%;
             height: 100%;
-            border: none;
-            padding: 18px;
+            padding: 10px;
           }
         }
         .btn-box{
@@ -174,6 +171,10 @@ export default {
     background: #f6f6f6;
     text-align: center;
     padding: 9px;
+    a{
+      color: black;
+      font-weight: bold;
+    }
   }
 }
 </style>
