@@ -38,6 +38,11 @@ const routes = [{
         ]
     },
     {
+        path: '/register',
+        name: 'register',
+        component: modules.register
+    },
+    {
         path: '/login',
         name: 'login',
         component: modules.login

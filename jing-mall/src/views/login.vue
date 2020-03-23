@@ -10,10 +10,10 @@
             <span class="checked">帐号登录</span><span class="sep-line">|</span><span>扫码登录</span>
           </h3>
           <div class="input">
-            <input type="text" placeholder="请输入帐号" v-model="username">
+            <el-input placeholder="请输入帐号" v-model="username"></el-input>
           </div>
           <div class="input">
-            <input type="password" placeholder="请输入密码" v-model="password">
+            <el-input placeholder="请输入密码" v-model="password"></el-input>
           </div>
           <div class="btn-box">
             <a href="javascript:;" class="btn" @click="login">登录</a>
@@ -60,23 +60,20 @@ export default {
         this.axios.get('/carts/products/sum').then((res=0)=>{
           this.$store.dispatch('saveCartCount',res);
         })
+        this.$message.success('登录成功！')
         this.$router.push({
           name:'index',
           params:{
             from:'login'
           }
         });
+      }).catch((err) => {
+        this.$message.error('用户名或密码错误！')
       })
     },
     ...mapActions(['saveUserName']),
     register(){
-      this.axios.post('/user/register',{
-        username:'hao',
-        password:'admin1',
-        email:'ad888@163.com'
-      }).then(()=>{
-        this.$message.success('注册成功');
-      })
+      this.$router.push('/register')
     }
   }
 }
@@ -117,15 +114,11 @@ export default {
           }
         }
         .input{
-          display:inline-block;
-          width:348px;
           height:50px;
-          border:1px solid #E5E5E5;
           margin-bottom:20px;
           input{
             width: 100%;
             height: 100%;
-            border: none;
             padding: 18px;
           }
         }

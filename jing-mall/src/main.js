@@ -4,7 +4,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueLazyLoad from 'vue-lazyload'
 import VueCookie from 'vue-cookie'
-import { Dialog,Button,Message } from 'element-ui'
+import { Dialog,Button,Message,Input } from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import store from './store'
 import App from './App.vue'
@@ -46,6 +46,7 @@ Vue.use(VueLazyLoad,{
 Vue.prototype.$message = Message;
 Vue.use(Dialog)
 Vue.use(Button)
+Vue.use(Input)
 Vue.config.productionTip = false
 
 new Vue({
