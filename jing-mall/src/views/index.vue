@@ -203,14 +203,14 @@ export default {
   methods: {
     jing(){
       this.axios.get('/products',{
-        params:{
-          categoryId:100012,
-          pageSize:14
-        }
-      }).then((res)=>{
-        res.list = res.list.slice(6,14);
-        this.phoneList = [res.list.slice(0,4),res.list.slice(4,8)];
-      })
+          params:{
+            categoryId:100012,
+            pageSize:14
+          }
+        }).then((res)=>{
+          res.list = res.list.slice(6,14);
+          this.phoneList = [res.list.slice(0,4),res.list.slice(4,8)];
+        })
     },
     showdetail(id){
       this.$router.push(`/product/${id}`)
