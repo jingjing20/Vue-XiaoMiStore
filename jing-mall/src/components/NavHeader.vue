@@ -274,7 +274,9 @@ export default {
           pageSize:6
         }
       }).then((res)=>{
-        this.phoneList = res.list;
+        console.log('111111')
+        console.log(res)
+        this.phoneList = res;
       })
     },
     login(){

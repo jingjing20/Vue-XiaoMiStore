@@ -4,14 +4,14 @@ import VueRouter from 'vue-router'
 //引入文件优化
 const path = require('path')
 const files = require.context('@/views', false, /\.vue$/)
-console.log(files)
+// console.log(files)
 const modules = {}
 files.keys().forEach(key => {
   const name = path.basename(key, '.vue')
   modules[name] = files(key).default || files(key)
-  console.log(name)
+//   console.log(name)
 })
-console.log(modules)
+// console.log(modules)
 
 Vue.use(VueRouter)
 

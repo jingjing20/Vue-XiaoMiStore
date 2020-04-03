@@ -108,6 +108,7 @@ import SearchBar from '../components/ServiceBar';
 import Modal from './../components/Modal'
 import { swiper, swiperSlide } from 'vue-awesome-swiper';
 import 'swiper/dist/css/swiper.css';
+// import axios from 'axios'
 export default {
   components: {
     swiper,
@@ -208,8 +209,11 @@ export default {
             pageSize:14
           }
         }).then((res)=>{
-          res.list = res.list.slice(6,14);
-          this.phoneList = [res.list.slice(0,4),res.list.slice(4,8)];
+          console.log('index')
+          console.log(res)
+          res = res.slice(6,14);
+          this.phoneList = [res.slice(0,4),res.slice(4,8)];
+          // this.phoneList = res
         })
     },
     showdetail(id){

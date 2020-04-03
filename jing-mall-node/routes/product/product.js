@@ -4,15 +4,21 @@ const product = express.Router()
 const productModel = require('../../models/product');
 
 product.get('/', (req,res) => {
-  // const categoryId = req.params.categoryId;
+  let { categoryId, pageSize} = req.query;
   console.log('---------')
-  // console.log(categoryId)
+  console.log(categoryId)
+  console.log(pageSize)
   productModel.find({
-    // categoryId
+    categoryId:categoryId,
   })
-  .exec((err, product) => {
-    res.json(product)
+  // .limit(pageSize)
+  .exec((err, jing) => {
+    res.json({
+      status: 0,
+      data: jing,
+    })
   })
+  return res
 })
 
 module.exports = product;
