@@ -297,7 +297,7 @@ export default {
           }
         })
         .then(res => {
-          this.phoneList = res[0].list;
+          this.phoneList = res[0].productlist;
         });
     },
     login() {

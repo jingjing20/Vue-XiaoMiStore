@@ -142,29 +142,7 @@ export default {
           prevEl: ".swiper-button-prev"
         }
       },
-      slideList: [
-        {
-          id: "42",
-          img: "/imgs/slider/slide-1.jpg"
-        },
-        {
-          id: "45",
-          img: "/imgs/slider/slide-2.jpg"
-        },
-        {
-          id: "46",
-          img: "/imgs/slider/slide-3.jpg"
-        },
-        {
-          id: "47",
-          img: "/imgs/slider/slide-4.jpg"
-        },
-        {
-          id: "48",
-          img:
-            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/e909ef0e50960f61a730380013bc960a.jpg?thumb=1&w=1533&h=575&f=webp&q=90"
-        }
-      ],
+      slideList: [],
       menuList: [
         [
           {
@@ -194,27 +172,7 @@ export default {
         [0, 0, 0, 0],
         [0, 0, 0, 0]
       ],
-      adsList: [
-        {
-          id: 33,
-          img:
-            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/7bc54a61b927dd8c54ddd39a0acf0254.jpg?w=632&h=340"
-        },
-        {
-          id: 48,
-          img:
-            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/94c74e01afe50a86c3a87ff030b85781.jpg?w=632&h=340"
-        },
-        {
-          id: 45,
-          img:
-            "https://cdn.cnbj1.fds.api.mi-img.com/mi-mall/816a66edef10673b4768128b41804cae.jpg?w=632&h=340"
-        },
-        {
-          id: 47,
-          img: "/imgs/ads/ads-4.jpg"
-        }
-      ],
+      adsList: [],
       phoneList: [],
       showModal: false
     };
@@ -232,11 +190,15 @@ export default {
           }
         })
         .then(res => {
-          res = res[0].list;
+          res = res[0].productlist;
           res = res.slice(6, 14);
           this.phoneList = [res.slice(0, 4), res.slice(4, 8)];
           // this.phoneList = res
         });
+      this.axios.get("/swiper").then(res => {
+        this.slideList = res[0].swiperlist;
+        this.adsList = res[0].adslist;
+      });
     },
     showdetail(id) {
       this.$router.push(`/product/${id}`);
